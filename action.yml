@@ -1,0 +1,22 @@
+name: 'setup-smt'
+description: 'A GitHub action for downloading SMT solvers.'
+author: 'Alexander Weigl'
+branding:
+  icon: 'award'
+  color: 'green'
+inputs:
+  install:
+    required: false
+    description: 'Installation folder'
+  smt-solvers:
+    required: false  
+    description: 'A list of smt solvers'
+    default: |
+      z3
+  failOnError:
+    description: 'Defines if the action should result in a build failure, if an error was discovered'
+    required: false
+    default: "false"
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
